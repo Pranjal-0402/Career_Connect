@@ -22,7 +22,7 @@ const JobDescription = () => {
   const applyJobHandler = async () => {
     try {
       axios.defaults.withCredentials = true;
-      const res = await axios.get(`http://localhost:8000/api/v1/application/apply/${params.id}`);
+      const res = await axios.get(`https://career-connect-79k9.onrender.com/api/v1/application/apply/${params.id}`);
       if (res.data.success) {
         setIsApplied(true); // Update the local state
         const updatedJob = { ...singleJobById, applications: [...singleJobById.applications, { applicant: authUser._id }] };
@@ -39,7 +39,7 @@ const JobDescription = () => {
     const fetchSingleJob = async () => {
       try {
         axios.defaults.withCredentials = true;
-        const res = await axios.get(`http://localhost:8000/api/v1/job/${params.id}`);
+        const res = await axios.get(`https://career-connect-79k9.onrender.com/api/v1/job/${params.id}`);
         if (res.data.success) {
           dispatch(setSingleJobById(res.data.job));
           setIsApplied(res.data.job.applications.some(application => application.applicant === authUser?._id)); // Ensure the state is in sync with fetched data

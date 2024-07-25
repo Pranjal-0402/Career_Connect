@@ -17,7 +17,7 @@ const Applicants = () => {
         const fetchAllApplicants = async () => {
             try {
                 axios.defaults.withCredentials = true;
-                const res = await axios.get(`http://localhost:8000/api/v1/application/${id}/applicants`,{ withCredentials: true });
+                const res = await axios.get(`https://career-connect-79k9.onrender.com/api/v1/application/${id}/applicants`,{ withCredentials: true });
                 if (res.data.success) {
                     dispatch(setAllApplicants(res.data.job));
                 }

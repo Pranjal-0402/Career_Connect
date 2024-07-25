@@ -15,11 +15,10 @@ import { useNavigate } from "react-router-dom"
 const category = [
     "Frontend Developer",
     "Backend Developer",
-    "Data Engineer",
-    "Data Science",
-    "Graphic Designer",
-    "UI Developer",
-    "Wordpress Developer",
+    "Data Analyst",
+    "Full Stack Developer",
+    "Software Developer",
+    "Business Analyst",
 ]
 
 export function CategoryCarousel() {
