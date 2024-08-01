@@ -15,7 +15,7 @@ const Navbar = () => {
                 <div className='flex items-center gap-12'>
                     <ul className='flex font-medium items-center gap-5'>
                         {
-                            authUser && authUser.role === "recruiter" ? (
+                            authUser && authUser?.role === "recruiter" ? (
                                 <>
                                     <li className='hover:text-[#6A38C2] cursor-pointer'><Link to={"/admin/companies"}>Companies</Link></li>
                                     <li className='hover:text-[#6A38C2] cursor-pointer'><Link to={"/admin/jobs"}>Jobs</Link></li>
