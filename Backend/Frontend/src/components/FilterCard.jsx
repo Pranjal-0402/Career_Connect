@@ -36,7 +36,7 @@ const FilterCard = () => {
             </div>
             <hr className='mt-3' />
             <RadioGroup value={selectedValue} onValueChange={handleChange}>
-                {filterData.map((data, index) => (
+                {filterData?.map((data, index) => (
                     <div key={index}>
                         <h1 className='font-medium text-lg'>{data.filterType}</h1>
                         {data.array.map((item, idx) => {
