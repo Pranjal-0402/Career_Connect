@@ -10,7 +10,7 @@ const LatestJobs = () => {
             <h1 className='text-4xl font-bold'><span className='text-[#6A38C2]'>Latest and Top</span> Job Openings</h1>
             <div className='grid grid-cols-3 gap-4 my-5'>
                 {
-                    allJobs && allJobs?.slice(0,6).map(job => <Link key={job._id} to={`/description/${job?._id}`}><LatestJobCard job={job}/></Link> )
+                    allJobs && allJobs?.slice(0,6).map(job => <Link key={job?._id} to={`/description/${job?._id}`}><LatestJobCard job={job}/></Link> )
                 }
             </div>
         </div>
