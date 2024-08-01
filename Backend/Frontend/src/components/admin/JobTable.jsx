@@ -20,9 +20,9 @@ const JobTable = () => {
     const [filterJob, setFilterJob] = useState(adminJobs);
     const navigate = useNavigate();
     useEffect(() => {
-        const filterData = adminJobs && adminJobs.filter((job) => {
+        const filterData = adminJobs && adminJobs?.filter((job) => {
             if (!searchAdminJobs) return true;
-            return job.company?.name.toLowerCase().includes(searchAdminJobs.toLowerCase()) || job?.title.toLowerCase().includes(searchAdminJobs.toLowerCase());
+            return job?.company?.name.toLowerCase().includes(searchAdminJobs.toLowerCase()) || job?.title.toLowerCase().includes(searchAdminJobs.toLowerCase());
         })
         setFilterJob(filterData);
     }, [adminJobs, searchAdminJobs])
