@@ -22,7 +22,7 @@ const CompaniesTable = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const filteredCompany = companies && companies.filter((company) => {
+    const filteredCompany = companies && companies?.filter((company) => {
       if (!searchCompanyByText) return true;
       return company?.name?.toLowerCase().includes(searchCompanyByText.toLowerCase());
     });
@@ -61,7 +61,7 @@ const CompaniesTable = () => {
                 <PopoverTrigger><MoreHorizontal /></PopoverTrigger>
                 <PopoverContent className="w-32">
                   <div onClick={() => {
-                    navigate(`/admin/companies/${company._id}`);
+                    navigate(`/admin/companies/${company?._id}`);
                   }} className="flex w-fit items-center gap-2 cursor-pointer">
                     <Edit2 className="w-4" />
                     <span>Edit</span>
