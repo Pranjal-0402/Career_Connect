@@ -30,8 +30,8 @@ const CreateJobs = () => {
         setInput({ ...input, [e.target.name]: e.target.value });
     }
     const handleSelectChange = (value) => {
-        const selectedCompany = companies.find(company => company.name.toLowerCase() === value);
-        setInput({ ...input, companyId: selectedCompany._id });
+        const selectedCompany = companies?.find(company => company?.name.toLowerCase() === value);
+        setInput({ ...input, companyId: selectedCompany?._id });
     }
 
     const submitHandler = async (e) => {
@@ -154,7 +154,7 @@ const CreateJobs = () => {
                             />
                         </div>
                         {
-                            companies.length !== 0 && (
+                            companies?.length !== 0 && (
                                 <Select onValueChange={handleSelectChange}>
                                     <SelectTrigger className="w-[180px]">
                                         <SelectValue placeholder="Select a Company" />
@@ -162,7 +162,7 @@ const CreateJobs = () => {
                                     <SelectContent>
                                         <SelectGroup>
                                             {
-                                                companies && companies.map((company) => {
+                                                companies && companies?.map((company) => {
                                                     return (
                                                         <SelectItem
                                                             key={company?._id}
@@ -182,7 +182,7 @@ const CreateJobs = () => {
                     </div>
                     <Button onClick={submitHandler} disabled={companies?.length === 0 ? true : false} className='w-full mt-4'>Post New Job</Button>
                     {
-                        companies.length === 0 && <p className='text-red-600 text-xs font-bold text-center my-3'>*Please register a company first, before posting a jobs</p>
+                        companies?.length === 0 && <p className='text-red-600 text-xs font-bold text-center my-3'>*Please register a company first, before posting a jobs</p>
                     }
                 </div>
             </div>
