@@ -27,7 +27,7 @@ export function CategoryCarousel() {
     return (
         <Carousel className="w-full max-w-xl mx-auto my-10">
             <CarouselContent>
-                {category.map((item, index) => (
+                {category?.map((item, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                         <div className="p-1">
                             <Button onClick={() => {
