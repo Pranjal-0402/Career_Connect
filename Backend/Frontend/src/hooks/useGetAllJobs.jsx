@@ -10,7 +10,7 @@ const useGetAllJobs = () => {
     useEffect(() => {
         const fetchJobs = async () => {
             try {
-                axios.defaults.withCredentials = true;
+                //axios.defaults.withCredentials = true;
                 const res = await axios.get(`https://career-connect-79k9.onrender.com/api/v1/job/all?keyword=${searchText}`);
                
                 if (res.data.success) {
